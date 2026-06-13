@@ -11,7 +11,7 @@
             --accent-pink: #FFB7C5;  /* Sakura Pink untuk border & highlight */
             --dark-pink: #D4A5B8;    /* Muted Rose untuk teks tajuk */
             --card-bg: #FFFFFF;      /* Kad putih bersih */
-            --text-main: #4A3E43;    /* Teks gelap lembut (bukan hitam pekat supaya nampak estetik) */
+            --text-main: #4A3E43;    /* Teks gelap lembut supaya nampak estetik */
             --text-muted: #8B7A81;   /* Teks huraian */
             --nav-bg: rgba(255, 240, 245, 0.85); /* Navigasi pink cair transparent */
         }
@@ -68,13 +68,30 @@
             background: rgba(255, 183, 197, 0.2);
         }
 
-        /* Header Section (Gambar Dibuang Terus) */
+        /* Header Section dengan Susunan Gambar Profile Baru yang Lawa */
         header {
-            background: linear-gradient(180deg, #FFE4E1, var(--primary-pink)); /* Gradasi pink cair */
+            background: linear-gradient(180deg, #FFE4E1, var(--primary-pink)); 
             padding: 5rem 2rem;
             text-align: center;
             border-bottom: 2px solid var(--accent-pink);
             position: relative;
+        }
+
+        /* Frame Gambar Profile Estetik */
+        .profile-frame {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 1.5rem auto;
+            border: 4px solid #FFFFFF;
+            box-shadow: 0 8px 25px rgba(212, 165, 184, 0.4);
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-frame:hover {
+            transform: scale(1.05);
         }
 
         header h1 {
@@ -431,7 +448,9 @@
     </nav>
 
     <header id="home">
-        <!-- BAHAGIAN GAMBAR PROFILE DAH DIBUANG SEPERTI YANG DIKAHENDAKI -->
+        <!-- FRAME GAMBAR PROFILE SEPERTI YANG DIMINTA (MENGARAH KE ./profile.jpg) -->
+        <img src="./profile.jpg" alt="Alisa Qaisarah" class="profile-frame">
+        
         <h1>Alisa Qaisarah Binti Rizauddin</h1>
         <div class="matric">Matric No: A211526</div>
         <p class="intro-text">
