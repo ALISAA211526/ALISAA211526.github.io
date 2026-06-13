@@ -14,6 +14,7 @@
             --text-main: #4A3E43;    /* Teks gelap lembut supaya nampak estetik */
             --text-muted: #8B7A81;   /* Teks huraian */
             --nav-bg: rgba(255, 240, 245, 0.85); /* Navigasi pink cair transparent */
+            --brand-color: #E65C8C;  /* Warna pink pekat sikit untuk logo QuizEdu */
         }
 
         * {
@@ -31,7 +32,7 @@
             padding-top: 80px;
         }
 
-        /* Navigation Bar */
+        /* Navigation Bar Lengkap dengan Logo QuizEdu di Kiri */
         nav {
             position: fixed;
             top: 0;
@@ -48,9 +49,46 @@
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
+            justify-content: space-between; /* Agihkan logo ke kiri, menu ke kanan */
+            align-items: center;
+            padding: 0.8rem 2rem;
+        }
+
+        /* Logo Brand Style (Macam HanaNadia tapi ditukar ke QuizEdu) */
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            background-color: var(--brand-color);
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
             justify-content: center;
-            gap: 1rem;
-            padding: 1.2rem;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 10px rgba(230, 92, 140, 0.3);
+        }
+
+        .logo-text {
+            font-size: 1.3rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            color: #333333;
+        }
+
+        .logo-text span {
+            color: var(--brand-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 0.5rem;
         }
 
         nav a {
@@ -68,26 +106,50 @@
             background: rgba(255, 183, 197, 0.2);
         }
 
-        /* Header Section dengan Susunan Gambar Profile Baru yang Lawa */
+        /* Header Section Utama */
         header {
             background: linear-gradient(180deg, #FFE4E1, var(--primary-pink)); 
-            padding: 5rem 2rem;
+            padding: 4rem 2rem 5rem 2rem;
             text-align: center;
             border-bottom: 2px solid var(--accent-pink);
             position: relative;
         }
 
-        /* Frame Gambar Profile Estetik */
+        /* Badge Kapsul Atas Gambar (Ikut rujukan image_de7c81.png) */
+        .info-badge {
+            display: inline-flex;
+            align-items: center;
+            background-color: rgba(255, 183, 197, 0.2);
+            border: 1px solid rgba(230, 92, 140, 0.3);
+            color: #B52B59;
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            margin-bottom: 2rem;
+            gap: 0.4rem;
+        }
+
+        /* Frame Gambar Profile Bentuk Blob Organik Cantik */
         .profile-frame {
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            /* Bentuk beralun organik sebijik macam rujukan */
+            border-radius: 60% 40% 60% 40% / 40% 60% 40% 60%;
             object-fit: cover;
-            margin: 0 auto 1.5rem auto;
-            border: 4px solid #FFFFFF;
-            box-shadow: 0 8px 25px rgba(212, 165, 184, 0.4);
+            margin: 0 auto 2rem auto;
+            border: 6px solid #FFFFFF;
+            box-shadow: 0 12px 30px rgba(212, 165, 184, 0.4);
             display: block;
+            animation: profileMorph 8s ease-in-out infinite alternate;
             transition: transform 0.3s ease;
+        }
+
+        /* Kesan animasi beralun lembut automatik */
+        @keyframes profileMorph {
+            0% { border-radius: 60% 40% 60% 40% / 40% 60% 40% 60%; }
+            100% { border-radius: 40% 60% 40% 60% / 60% 40% 60% 40%; }
         }
 
         .profile-frame:hover {
@@ -95,27 +157,19 @@
         }
 
         header h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
+            font-size: 2.5rem;
+            font-weight: 800;
             letter-spacing: -0.02em;
-            color: var(--dark-pink);
-            margin-bottom: 0.5rem;
-        }
-
-        header .matric {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-            font-weight: 600;
-            letter-spacing: 0.05em;
+            color: #1A3050; /* Warna biru gelap lembut untuk impak nama yang kemas */
+            margin-bottom: 1.5rem;
         }
 
         header .intro-text {
             max-width: 800px;
             margin: 0 auto 2.5rem auto;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             line-height: 1.8;
-            color: var(--text-main);
+            color: #556270;
         }
 
         /* Metadata Grid */
@@ -414,19 +468,24 @@
 
         @media (max-width: 768px) {
             body {
-                padding-top: 130px;
+                padding-top: 140px;
             }
             .nav-container {
-                gap: 0.3rem;
-                padding: 0.8rem 0.4rem;
+                flex-direction: column;
+                gap: 0.8rem;
+                padding: 0.8rem 1rem;
+            }
+            .nav-links {
+                gap: 0.2rem;
                 flex-wrap: wrap;
+                justify-content: center;
             }
             nav a {
-                padding: 0.4rem 0.8rem;
+                padding: 0.4rem 0.6rem;
                 font-size: 0.8rem;
             }
             header h1 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
             .grid-container {
                 grid-template-columns: 1fr;
@@ -436,25 +495,42 @@
 </head>
 <body>
 
+    <!-- NAV BAR BARU DENGAN LOGO QUIZEDU SEBELAH KIRI -->
     <nav>
         <div class="nav-container">
-            <a href="#home">Home</a>
-            <a href="#labs">Labs</a>
-            <a href="#projects">Projects</a>
-            <a href="#reflection">Reflection</a>
-            <a href="#skills">Skills</a>
-            <a href="#resources">Resources</a>
+            <a href="#home" class="nav-logo">
+                <div class="logo-icon">🎀</div>
+                <div class="logo-text">QUIZ<span>EDU</span></div>
+            </a>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#labs">Labs</a>
+                <a href="#projects">Projects</a>
+                <a href="#reflection">Reflection</a>
+                <a href="#skills">Skills</a>
+                <a href="#resources">Resources</a>
+            </div>
         </div>
     </nav>
 
     <header id="home">
-        <!-- FRAME GAMBAR PROFILE SEPERTI YANG DIMINTA (MENGARAH KE ./profile.jpg) -->
+        <!-- BADGE KAPSUL MENGIKUT ELEMEN RUJUKAN -->
+        <div class="info-badge">
+            <span>✨ A211526</span>
+            <span>•</span>
+            <span>2IT2</span>
+            <span>•</span>
+            <span>INFORMATION TECHNOLOGY</span>
+        </div>
+
+        <!-- FRAME GAMBAR PROFILE BENTUK BLOB ORGANIK SEBIJIK MACAM RUJUKAN -->
         <img src="./profile.jpg" alt="Alisa Qaisarah" class="profile-frame">
         
-        <h1>Alisa Qaisarah Binti Rizauddin</h1>
-        <div class="matric">Matric No: A211526</div>
+        <h1>ALISA QAISARAH BINTI RIZAUDDIN</h1>
+        
         <p class="intro-text">
-            I am a second-year student pursuing advanced studies in Android Mobile Development. Throughout this course, I have mastered the art of building modern, declarative user interfaces using Jetpack Compose, advancing from fundamental UI layouts to cloud database synchronization and hardware sensor integration.
+            Information Technology Student @ Universiti Kebangsaan Malaysia. 
+            Bridging mobile development and game-based learning mechanics with the smart <strong>QuizEdu</strong> app. 🌸
         </p>
 
         <div class="meta-grid">
