@@ -6,11 +6,11 @@
     <title>Alisa Qaisarah | Mobile Programming Portfolio</title>
     <style>
         :root {
-            /* Warna Baru: Gabungan Putih Bersih, Soft Pink & Biru Slate Moden */
+            /* Warna Latar Belakang & Tema Tech-Pink */
             --bg-main: #FAFAFA;
-            --pink-accent: #FF8DA1;   /* Pink yang lebih segar & moden */
-            --pink-light: #FFF0F2;    /* Tona latar belakang lembut */
-            --text-dark: #2C3E50;     /* Biru gelap matang untuk teks tajuk */
+            --pink-accent: #FF8DA1;   /* Warna pink moden */
+            --pink-light: #FFF0F2;    /* Latar belakang box lembut */
+            --text-dark: #2C3E50;     /* Biru gelap matang untuk tajuk */
             --text-body: #5A6B7C;     /* Kelabu lembut untuk huraian */
             --card-bg: #FFFFFF;
         }
@@ -30,7 +30,7 @@
             padding-top: 75px;
         }
 
-        /* Navigation Bar - Design Baru Tanpa Logo QuizEdu Lama */
+        /* Navigation Bar */
         nav {
             position: fixed;
             top: 0;
@@ -52,11 +52,11 @@
             padding: 1rem 2rem;
         }
 
-        /* Logo Baru Menggunakan Singkatan Nama Alisa - Lebih Monogram & Personal */
+        /* Logo Ditukar Kepada Nama Projek: QuizEdu App */
         .nav-logo {
             font-size: 1.25rem;
             font-weight: 800;
-            letter-spacing: 0.05em;
+            letter-spacing: -0.01em;
             color: var(--text-dark);
             text-decoration: none;
         }
@@ -82,7 +82,7 @@
             color: var(--pink-accent);
         }
 
-        /* Header Section - Konsep Bersih Tanpa Badge & Teks Pengenalan Lama */
+        /* Header Section */
         header {
             max-width: 1100px;
             margin: 0 auto;
@@ -93,7 +93,7 @@
             text-align: center;
         }
 
-        /* Frame Gambar Bulat Klasik dengan Border Bayang (Bukan bentuk Blob lagi) */
+        /* Gambar Profile Bulat Klasik */
         .profile-frame {
             width: 170px;
             height: 170px;
@@ -112,7 +112,6 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Tagline Ringkas Baru */
         .tagline {
             font-size: 1.1rem;
             color: var(--pink-accent);
@@ -120,7 +119,7 @@
             margin-bottom: 2.5rem;
         }
 
-        /* Metadata Grid Kemas */
+        /* Metadata Grid */
         .meta-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -419,9 +418,10 @@
 </head>
 <body>
 
+    <!-- NAV BAR MENGGUNAKAN NAMA PROJEK QUIZEDU APP -->
     <nav>
         <div class="nav-container">
-            <a href="#home" class="nav-logo">AQ<span>.PORTFOLIO</span></a>
+            <a href="#home" class="nav-logo">QuizEdu<span>App</span></a>
             <div class="nav-links">
                 <a href="#home" class="nav-item">Home</a>
                 <a href="#labs" class="nav-item">Labs</a>
@@ -434,11 +434,13 @@
     </nav>
 
     <header id="home">
+        <!-- GAMBAR PROFILE BULAT (MENGGUNAKAN PROFILE.JPEG) -->
         <img src="./profile.jpeg" alt="Alisa Qaisarah" class="profile-frame">
         
         <h1>ALISA QAISARAH BINTI RIZAUDDIN</h1>
         <div class="tagline">Mobile Programming Portfolio</div>
 
+        <!-- METADATA GRID BERSIH -->
         <div class="meta-grid">
             <div class="meta-item">
                 <strong>Matric No.</strong>
@@ -468,6 +470,7 @@
         <h2>Laboratory Exercises</h2>
         <div class="grid-container">
             
+            <!-- Lab 1 -->
             <div class="card">
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/G2VQSF-t0lc?si=UYOl7I0qp2RYpbr" allowfullscreen></iframe>
@@ -482,6 +485,7 @@
                 </div>
             </div>
 
+            <!-- Lab 2 -->
             <div class="card">
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/gWI5PMN6yjI?si=lD1lhPjmG0WZok8f" allowfullscreen></iframe>
@@ -496,6 +500,7 @@
                 </div>
             </div>
 
+            <!-- Lab 3 -->
             <div class="card">
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/L5_1BxlJUFY?si=o8al9ZDCy-GswP5p" allowfullscreen></iframe>
@@ -510,6 +515,7 @@
                 </div>
             </div>
 
+            <!-- Lab 4 -->
             <div class="card">
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/w91Pi6hYioQ?si=NiN-5iT0wNRUQ4HT" allowfullscreen></iframe>
@@ -524,6 +530,7 @@
                 </div>
             </div>
 
+            <!-- Lab 5 -->
             <div class="card">
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/G-u3l-An7n8?si=P-EunCuek93STF9B" allowfullscreen></iframe>
@@ -545,6 +552,7 @@
         <h2>Course Projects</h2>
         <div class="grid-container">
 
+            <!-- Project 1 -->
             <div class="card">
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/nKUb_J2FHmE?si=07TMRbZbhfjiGB3A" allowfullscreen></iframe>
@@ -563,6 +571,7 @@
                 </div>
             </div>
 
+            <!-- Project 2 -->
             <div class="card">
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/36reuIWBiqM?si=UKXVwuRvfnty77HP" allowfullscreen></iframe>
