@@ -6,18 +6,14 @@
     <title>Alisa Qaisarah | Mobile Programming e-Portfolio</title>
     <style>
         :root {
-            /* Tema warna Pastel Lembut (Soft Pink & Lavender) */
-            --primary-gradient: linear-gradient(135deg, #FBCFE8, #C7D2FE); 
-            --card-gradient: linear-gradient(145deg, #242028, #1A161E);
-            --body-bg: #141118; 
-            --accent-pink: #F9A8D4; 
-            --accent-purple: #DDD6FE; 
-            --text-pure: #FFFFFF;
-            --text-dim: #E5E7EB;
-            --text-dark: #9CA3AF;
-            --glass-nav: rgba(20, 17, 24, 0.9);
-            --card-border: rgba(249, 168, 212, 0.15);
-            --card-border-hover: rgba(221, 214, 254, 0.5);
+            /* Tema Warna Baru: Soft Pink Cair & Pastel White */
+            --primary-pink: #FFF0F5; /* Lavender Blush / Pink sangat cair untuk background */
+            --accent-pink: #FFB7C5;  /* Sakura Pink untuk border & highlight */
+            --dark-pink: #D4A5B8;    /* Muted Rose untuk teks tajuk */
+            --card-bg: #FFFFFF;      /* Kad putih bersih */
+            --text-main: #4A3E43;    /* Teks gelap lembut (bukan hitam pekat supaya nampak estetik) */
+            --text-muted: #8B7A81;   /* Teks huraian */
+            --nav-bg: rgba(255, 240, 245, 0.85); /* Navigasi pink cair transparent */
         }
 
         * {
@@ -29,8 +25,8 @@
 
         body {
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--body-bg);
-            color: var(--text-dim);
+            background-color: var(--primary-pink);
+            color: var(--text-main);
             line-height: 1.6;
             padding-top: 80px;
         }
@@ -41,10 +37,10 @@
             top: 0;
             left: 0;
             width: 100%;
-            background-color: var(--glass-nav);
+            background-color: var(--nav-bg);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 183, 197, 0.3);
             z-index: 1000;
         }
 
@@ -58,7 +54,7 @@
         }
 
         nav a {
-            color: var(--text-dark);
+            color: var(--text-muted);
             text-decoration: none;
             padding: 0.6rem 1.2rem;
             font-weight: 600;
@@ -68,60 +64,30 @@
         }
 
         nav a:hover {
-            color: var(--text-pure);
-            background: rgba(255, 255, 255, 0.05);
+            color: var(--dark-pink);
+            background: rgba(255, 183, 197, 0.2);
         }
 
-        /* Header / Hero Section */
+        /* Header Section (Gambar Dibuang Terus) */
         header {
-            background: radial-gradient(circle at top right, rgba(221, 214, 254, 0.1), transparent), 
-                        radial-gradient(circle at bottom left, rgba(249, 168, 212, 0.08), transparent),
-                        #1D1922;
+            background: linear-gradient(180deg, #FFE4E1, var(--primary-pink)); /* Gradasi pink cair */
             padding: 5rem 2rem;
             text-align: center;
-            border-bottom: 1px solid rgba(249, 168, 212, 0.15);
+            border-bottom: 2px solid var(--accent-pink);
             position: relative;
-        }
-
-        header::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: var(--primary-gradient);
-        }
-
-        /* Gaya Frame Gambar Muka Alisa */
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 1.5rem;
-            border: 3px solid var(--accent-pink);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease;
-        }
-
-        .profile-img:hover {
-            transform: scale(1.05);
         }
 
         header h1 {
             font-size: 2.8rem;
             font-weight: 700;
-            letter-spacing: -0.03em;
-            background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.02em;
+            color: var(--dark-pink);
             margin-bottom: 0.5rem;
         }
 
         header .matric {
             font-size: 1.2rem;
-            color: var(--accent-purple);
+            color: var(--text-muted);
             margin-bottom: 2rem;
             font-weight: 600;
             letter-spacing: 0.05em;
@@ -132,7 +98,7 @@
             margin: 0 auto 2.5rem auto;
             font-size: 1.1rem;
             line-height: 1.8;
-            color: var(--text-dim);
+            color: var(--text-main);
         }
 
         /* Metadata Grid */
@@ -142,10 +108,10 @@
             gap: 1.5rem;
             max-width: 900px;
             margin: 0 auto;
-            background: rgba(255, 255, 255, 0.02);
+            background: rgba(255, 255, 255, 0.6);
             padding: 1.5rem;
             border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 183, 197, 0.3);
         }
 
         .meta-item {
@@ -155,7 +121,7 @@
         }
 
         .meta-item strong {
-            color: var(--accent-pink);
+            color: var(--dark-pink);
             display: block;
             font-size: 0.85rem;
             text-transform: uppercase;
@@ -164,35 +130,32 @@
         }
 
         .meta-item span {
-            color: var(--text-pure);
+            color: var(--text-main);
             font-weight: 500;
             font-size: 1.05rem;
         }
 
         /* SDG Showcase Box */
         .sdg-box {
-            background: linear-gradient(135deg, rgba(249, 168, 212, 0.08), rgba(221, 214, 254, 0.05));
-            border: 1px solid rgba(249, 168, 212, 0.2);
+            background: #FFFFFF;
+            border: 1px solid var(--accent-pink);
             padding: 2rem;
             border-radius: 20px;
             max-width: 900px;
             margin: 3rem auto 0 auto;
             text-align: left;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 25px rgba(212, 165, 184, 0.1);
         }
 
         .sdg-box h3 {
-            color: #FFFFFF;
+            color: var(--dark-pink);
             font-size: 1.3rem;
             margin-bottom: 0.75rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
         }
 
         .sdg-box p {
             font-size: 1rem;
-            color: var(--text-dim);
+            color: var(--text-main);
             line-height: 1.7;
         }
 
@@ -207,7 +170,7 @@
             font-size: 2rem;
             font-weight: 700;
             margin-bottom: 3rem;
-            color: var(--text-pure);
+            color: var(--dark-pink);
             position: relative;
             display: inline-block;
         }
@@ -219,7 +182,7 @@
             left: 0;
             width: 50%;
             height: 3px;
-            background: var(--primary-gradient);
+            background: var(--accent-pink);
             border-radius: 2px;
         }
 
@@ -231,20 +194,20 @@
         }
 
         .card {
-            background: var(--card-gradient);
-            border: 1px solid var(--card-border);
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 183, 197, 0.4);
             border-radius: 20px;
             overflow: hidden;
             display: flex;
             flex-direction: column;
             transition: all 0.4s ease;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(212, 165, 184, 0.1);
         }
 
         .card:hover {
             transform: translateY(-5px);
-            border-color: var(--card-border-hover);
-            box-shadow: 0 10px 25px rgba(221, 214, 254, 0.1);
+            border-color: var(--accent-pink);
+            box-shadow: 0 10px 25px rgba(255, 183, 197, 0.4);
         }
 
         /* Embedded Video Players */
@@ -275,26 +238,26 @@
             font-size: 1.3rem;
             font-weight: 700;
             margin-bottom: 0.75rem;
-            color: var(--text-pure);
+            color: var(--dark-pink);
         }
 
         .card-content .description {
             font-size: 0.95rem;
-            color: var(--text-dark);
+            color: var(--text-muted);
             margin-bottom: 1.5rem;
         }
 
         .card-content .reflection-wrapper {
-            background: rgba(255,255,255,0.01);
+            background: var(--primary-pink);
             padding: 1.2rem;
             border-radius: 12px;
-            border-left: 3px solid var(--accent-purple);
+            border-left: 3px solid var(--accent-pink);
             margin-top: auto;
         }
 
         .card-content .reflection-title {
             font-weight: 700;
-            color: var(--accent-purple);
+            color: var(--dark-pink);
             margin-bottom: 0.4rem;
             font-size: 0.85rem;
             text-transform: uppercase;
@@ -302,14 +265,14 @@
 
         .card-content .reflection-text {
             font-style: italic;
-            color: var(--text-dim);
+            color: var(--text-main);
             font-size: 0.95rem;
         }
 
         /* Project Assignment Specifications */
         .project-problem {
-            background: rgba(249, 168, 212, 0.03);
-            border: 1px dashed rgba(249, 168, 212, 0.2);
+            background: rgba(255, 183, 197, 0.1);
+            border: 1px dashed var(--accent-pink);
             padding: 1rem;
             border-radius: 12px;
             margin-bottom: 1.2rem;
@@ -317,7 +280,7 @@
         }
 
         .project-problem strong {
-            color: var(--accent-pink);
+            color: var(--dark-pink);
             display: block;
             margin-bottom: 0.2rem;
         }
@@ -327,8 +290,8 @@
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
-            background: #FFFFFF;
-            color: #141118;
+            background: var(--dark-pink);
+            color: #FFFFFF;
             text-decoration: none;
             padding: 0.8rem 1.5rem;
             border-radius: 12px;
@@ -339,19 +302,20 @@
         }
 
         .btn-github:hover {
-            background: var(--accent-purple);
-            color: #141118;
+            background: var(--accent-pink);
+            color: #FFFFFF;
         }
 
         /* Highlight Text */
         .highlight-text {
             font-size: 1.15rem;
             line-height: 1.9;
-            color: var(--text-dim);
-            background: rgba(255, 255, 255, 0.01);
+            color: var(--text-main);
+            background: #FFFFFF;
             padding: 2.5rem;
             border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 183, 197, 0.4);
+            box-shadow: 0 4px 15px rgba(212, 165, 184, 0.05);
         }
 
         /* Skills Grid */
@@ -362,30 +326,31 @@
         }
 
         .skills-card {
-            background: var(--card-gradient);
-            border: 1px solid var(--card-border);
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 183, 197, 0.3);
             padding: 1.5rem;
             border-radius: 16px;
             display: flex;
             align-items: flex-start;
             gap: 1rem;
+            box-shadow: 0 4px 10px rgba(212, 165, 184, 0.05);
         }
 
         .skills-card .icon {
             font-size: 1.4rem;
-            background: rgba(255,255,255,0.03);
+            background: var(--primary-pink);
             padding: 0.5rem;
             border-radius: 10px;
         }
 
         .skills-card h4 {
-            color: var(--text-pure);
+            color: var(--dark-pink);
             font-size: 1.1rem;
             margin-bottom: 0.25rem;
         }
 
         .skills-card p {
-            color: var(--text-dark);
+            color: var(--text-muted);
             font-size: 0.9rem;
         }
 
@@ -398,14 +363,14 @@
         }
 
         .resources-list li {
-            background: rgba(255,255,255,0.01);
-            border: 1px solid rgba(255,255,255,0.04);
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 183, 197, 0.3);
             padding: 1.5rem;
             border-radius: 16px;
         }
 
         .resources-list li strong {
-            color: var(--text-pure);
+            color: var(--dark-pink);
             display: block;
             margin-bottom: 0.5rem;
             font-size: 1.1rem;
@@ -413,20 +378,20 @@
 
         .resources-list li p {
             font-size: 0.9rem;
-            color: var(--text-dark);
+            color: var(--text-muted);
         }
 
         footer {
-            background-color: #0D0A10;
+            background-color: #FFE4E1;
             text-align: center;
             padding: 3rem 2rem;
-            color: var(--text-dark);
+            color: var(--text-main);
             font-size: 0.95rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            border-top: 1px solid var(--accent-pink);
         }
 
         footer .credits {
-            color: var(--accent-pink);
+            color: var(--dark-pink);
             font-weight: 600;
         }
 
@@ -466,8 +431,7 @@
     </nav>
 
     <header id="home">
-        <img src="./profile.jpg" alt="Alisa Qaisarah" class="profile-img">
-        
+        <!-- BAHAGIAN GAMBAR PROFILE DAH DIBUANG SEPERTI YANG DIKAHENDAKI -->
         <h1>Alisa Qaisarah Binti Rizauddin</h1>
         <div class="matric">Matric No: A211526</div>
         <p class="intro-text">
@@ -475,4 +439,241 @@
         </p>
 
         <div class="meta-grid">
-            <div class
+            <div class="meta-item">
+                <strong>Programme</strong>
+                <span>Teknologi Maklumat</span>
+            </div>
+            <div class="meta-item">
+                <strong>Instructor</strong>
+                <span>Dr. Nazatul Aini</span>
+            </div>
+            <div class="meta-item">
+                <strong>Course Code</strong>
+                <span>TK2323 / TM2213</span>
+            </div>
+        </div>
+
+        <div class="sdg-box">
+            <h3>SDG 4: Quality Education</h3>
+            <p>Passive learning environments in traditional lecture halls often limit peer-to-peer interaction and student engagement. This gamified quiz ecosystem directly enhances collaborative learning and academic material retention.</p>
+        </div>
+    </header>
+
+    <section id="labs">
+        <h2>Laboratory Exercises</h2>
+        <div class="grid-container">
+            
+            <!-- Lab 1 -->
+            <div class="card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/G2VQSF-t0lc?si=UYOl7I0qp2RYpbr" allowfullscreen></iframe>
+                </div>
+                <div class="card-content">
+                    <h3>Lab 1: User Interface (UI)</h3>
+                    <p class="description">Foundations of layout designs, composition frameworks, and architectural style mechanics using structural modifiers.</p>
+                    <div class="reflection-wrapper">
+                        <div class="reflection-title">Reflection</div>
+                        <p class="reflection-text">I learned how to build declarative user interface structures using fundamental Jetpack Compose building blocks such as Column, Row, and Box. I also grasped the mechanics of modifying UI aesthetics—such as paddings, background brushes, and typography—without relying on traditional XML layouts.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lab 2 -->
+            <div class="card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/gWI5PMN6yjI?si=lD1lhPjmG0WZok8f" allowfullscreen></iframe>
+                </div>
+                <div class="card-content">
+                    <h3>Lab 2: Interaction</h3>
+                    <p class="description">Event handling, interaction states, and reactive responses triggered directly by client runtimes.</p>
+                    <div class="reflection-wrapper">
+                        <div class="reflection-title">Reflection</div>
+                        <p class="reflection-text">This lab introduced me to the concept of State Management in Compose using remember and mutableStateOf. I successfully implemented reactive UI elements that dynamically respond to real-time user inputs, clicks, and state changes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lab 3 -->
+            <div class="card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/L5_1BxlJUFY?si=o8al9ZDCy-GswP5p" allowfullscreen></iframe>
+                </div>
+                <div class="card-content">
+                    <h3>Lab 3: Material Design</h3>
+                    <p class="description">Theming implementations, uniform component styles, and dark/light mode context wrappers.</p>
+                    <div class="reflection-wrapper">
+                        <div class="reflection-title">Reflection</div>
+                        <p class="reflection-text">I explored the deployment of Material Design components and integrated a custom corporate color palette inspired by the university's corporate identity. I successfully built highly structured Card components, Floating Action Buttons, and handled both Light and Dark theme implementations.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lab 4 -->
+            <div class="card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/w91Pi6hYioQ?si=NiN-5iT0wNRUQ4HT" allowfullscreen></iframe>
+                </div>
+                <div class="card-content">
+                    <h3>Lab 4: Navigation</h3>
+                    <p class="description">Multi-screen destination routing configurations, screen backstack pipelines, and argument parsing rules.</p>
+                    <div class="reflection-wrapper">
+                        <div class="reflection-title">Reflection</div>
+                        <p class="reflection-text">In this macro exercise, I implemented a robust multi-screen navigation system using a centralized NavHost and NavController. I also mastered passing type-safe arguments—such as Game Room PINs—seamlessly from one destination screen to another.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lab 5 -->
+            <div class="card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/G-u3l-An7n8?si=P-EunCuek93STF9B" allowfullscreen></iframe>
+                </div>
+                <div class="card-content">
+                    <h3>Lab 5: Room Database</h3>
+                    <p class="description">Local SQLite structural persistence layers, entity abstraction models, and stream observers.</p>
+                    <div class="reflection-wrapper">
+                        <div class="reflection-title">Reflection</div>
+                        <p class="reflection-text">I acquired practical experience in offline data persistence using the Android Room SQLite abstraction library. I set up data structures via Entity definitions, managed secure CRUD operations via DAO interfaces, and safely observed historical data streams using Kotlin Flow.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Course Projects</h2>
+        <div class="grid-container">
+
+            <!-- Project 1 -->
+            <div class="card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/nKUb_J2FHmE?si=07TMRbZbhfjiGB3A" allowfullscreen></iframe>
+                </div>
+                <div class="card-content">
+                    <h3>Project 1: QuizEdu App</h3>
+                    <div class="project-problem">
+                        <strong>Problem Statement:</strong>
+                        The severe shortage of interactive, digitized quiz-lobby tools within standard higher education lecture settings leads to low revision engagement and uninspired peer-to-peer competition.
+                    </div>
+                    <div class="reflection-wrapper">
+                        <div class="reflection-title">Lessons Learned</div>
+                        <p class="reflection-text">I successfully merged custom Material 3 UI assets with an uninterrupted navigation lifecycle. Furthermore, I adapted my codebase to the MVVM (Model-View-ViewModel) architectural pattern, keeping the data logic cleanly decoupled from the UI layer for optimal scalability.</p>
+                    </div>
+                    <a href="https://github.com/ALISAA211526/Project1" target="_blank" class="btn-github">View on GitHub</a>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="card">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/36reuIWBiqM?si=UKXVwuRvfnty77HP" allowfullscreen></iframe>
+                </div>
+                <div class="card-content">
+                    <h3>Project 2: QuizEdu App (Advanced)</h3>
+                    <div class="project-problem">
+                        <strong>Problem Statement:</strong>
+                        Inefficient, manual validation mechanisms for verifying physical student presence in interactive quiz zones, compounded by a lack of dynamic question streams fetched directly from internet microservices.
+                    </div>
+                    <div class="reflection-wrapper">
+                        <div class="reflection-title">Lessons Learned</div>
+                        <p class="reflection-text">This project significantly escalated my core engineering capabilities. I effectively orchestrated Retrofit to asynchronously stream live questions from a Web API, configured Google's FusedLocationProviderClient to track physical device GPS hardware to verify student proximity, and constructed an immediate cloud-sync bridge that pushes local Room database entries straight to a remote Firebase Firestore Cloud cluster.</p>
+                    </div>
+                    <a href="https://github.com/ALISAA211526/Project2" target="_blank" class="btn-github">View on GitHub</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="reflection">
+        <h2>Reflection & Learning Journey</h2>
+        <div class="highlight-text">
+            My learning trajectory from Lab 1 through Project 2 has been a profoundly challenging yet rewarding transformation. Moving away from compiling static text views, I am now capable of engineering interconnected, full-stack client applications that converse fluidly with remote servers. Debugging runtime sensor callbacks and tracking real-time Firestore synchronization rifts has sculpted me into a critical, precise, and highly resilient software engineer.
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills & Tech Stack</h2>
+        <div class="skills-grid">
+            <div class="skills-card">
+                <div class="icon">💻</div>
+                <div>
+                    <h4>Language</h4>
+                    <p>Kotlin</p>
+                </div>
+            </div>
+            <div class="skills-card">
+                <div class="icon">🎨</div>
+                <div>
+                    <h4>UI Framework</h4>
+                    <p>Jetpack Compose (Material Design 3)</p>
+                </div>
+            </div>
+            <div class="skills-card">
+                <div class="icon">🏗️</div>
+                <div>
+                    <h4>Architecture</h4>
+                    <p>MVVM Pattern, Repository Pattern, Coroutines & Kotlin Flow</p>
+                </div>
+            </div>
+            <div class="skills-card">
+                <div class="icon">💾</div>
+                <div>
+                    <h4>Local Storage</h4>
+                    <p>Room Database (SQLite local storage)</p>
+                </div>
+            </div>
+            <div class="skills-card">
+                <div class="icon">🌐</div>
+                <div>
+                    <h4>Network Client</h4>
+                    <p>Retrofit HTTP Client & Gson Converters</p>
+                </div>
+            </div>
+            <div class="skills-card">
+                <div class="icon">📍</div>
+                <div>
+                    <h4>Hardware Sensors</h4>
+                    <p>Google Play Services Location API (GPS tracking)</p>
+                </div>
+            </div>
+            <div class="skills-card">
+                <div class="icon">☁️</div>
+                <div>
+                    <h4>Cloud Infrastructure</h4>
+                    <p>Google Firebase Firestore (NoSQL cloud syncing)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="resources">
+        <h2>Resources & Credits</h2>
+        <ul class="resources-list">
+            <li>
+                <strong>Open Trivia API</strong>
+                <p>Leveraged through Retrofit to cleanly parse and download dynamic question pools asynchronously.</p>
+            </li>
+            <li>
+                <strong>Google Play Services Location SDK</strong>
+                <p>Used to extract real-time hardware location coordinate coordinates with high-accuracy parameters.</p>
+            </li>
+            <li>
+                <strong>Firebase Firestore Android Client</strong>
+                <p>Deployed as the primary remote database engine to preserve cross-platform game room states.</p>
+            </li>
+            <li>
+                <strong>AI Collaboration</strong>
+                <p>An AI assistant (Gemini) was strategically engaged as a peer collaborator to refactor intricate Material 3 Compose components, address specific FilterChipDefaults compiler warnings, and assist in structuring the presentation script.</p>
+            </li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>Alisa Qaisarah Binti Rizauddin | Matric No: A211526</p>
+        <p class="credits">Mobile Programming Course Portfolio &copy; 2026</p>
+    </footer>
+
+</body>
+</html>
