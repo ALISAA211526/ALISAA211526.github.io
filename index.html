@@ -3,18 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alisa Qaisarah | Mobile Programming e-Portfolio</title>
+    <title>Alisa Qaisarah | Mobile Programming Portfolio</title>
     <style>
         :root {
-            /* Tema Warna Baru: Soft Pink Cair & Pastel White */
-            --primary-pink: #FFF0F5; /* Lavender Blush / Pink sangat cair untuk background */
-            --accent-pink: #FFB7C5;  /* Sakura Pink untuk border & highlight */
-            --dark-pink: #D4A5B8;    /* Muted Rose untuk teks tajuk */
-            --card-bg: #FFFFFF;      /* Kad putih bersih */
-            --text-main: #4A3E43;    /* Teks gelap lembut supaya nampak estetik */
-            --text-muted: #8B7A81;   /* Teks huraian */
-            --nav-bg: rgba(255, 240, 245, 0.85); /* Navigasi pink cair transparent */
-            --brand-color: #E65C8C;  /* Warna pink pekat sikit untuk logo QuizEdu */
+            /* Warna Baru: Gabungan Putih Bersih, Soft Pink & Biru Slate Moden */
+            --bg-main: #FAFAFA;
+            --pink-accent: #FF8DA1;   /* Pink yang lebih segar & moden */
+            --pink-light: #FFF0F2;    /* Tona latar belakang lembut */
+            --text-dark: #2C3E50;     /* Biru gelap matang untuk teks tajuk */
+            --text-body: #5A6B7C;     /* Kelabu lembut untuk huraian */
+            --card-bg: #FFFFFF;
         }
 
         * {
@@ -25,260 +23,204 @@
         }
 
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--primary-pink);
-            color: var(--text-main);
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-body);
             line-height: 1.6;
-            padding-top: 80px;
+            padding-top: 75px;
         }
 
-        /* Navigation Bar Lengkap dengan Logo QuizEdu di Kiri */
+        /* Navigation Bar - Design Baru Tanpa Logo QuizEdu Lama */
         nav {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background-color: var(--nav-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 183, 197, 0.3);
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
             z-index: 1000;
         }
 
         .nav-container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             display: flex;
-            justify-content: space-between; /* Agihkan logo ke kiri, menu ke kanan */
+            justify-content: space-between;
             align-items: center;
-            padding: 0.8rem 2rem;
+            padding: 1rem 2rem;
         }
 
-        /* Logo Brand Style (Macam HanaNadia tapi ditukar ke QuizEdu) */
+        /* Logo Baru Menggunakan Singkatan Nama Alisa - Lebih Monogram & Personal */
         .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            color: var(--text-dark);
             text-decoration: none;
         }
 
-        .logo-icon {
-            background-color: var(--brand-color);
-            color: white;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            box-shadow: 0 4px 10px rgba(230, 92, 140, 0.3);
-        }
-
-        .logo-text {
-            font-size: 1.3rem;
-            font-weight: 800;
-            letter-spacing: -0.03em;
-            color: #333333;
-        }
-
-        .logo-text span {
-            color: var(--brand-color);
+        .nav-logo span {
+            color: var(--pink-accent);
         }
 
         .nav-links {
             display: flex;
-            gap: 0.5rem;
+            gap: 1.5rem;
         }
 
-        nav a {
-            color: var(--text-muted);
+        nav a.nav-item {
+            color: var(--text-body);
             text-decoration: none;
-            padding: 0.6rem 1.2rem;
             font-weight: 600;
-            font-size: 0.95rem;
-            border-radius: 20px;
-            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
         }
 
-        nav a:hover {
-            color: var(--dark-pink);
-            background: rgba(255, 183, 197, 0.2);
+        nav a.nav-item:hover {
+            color: var(--pink-accent);
         }
 
-        /* Header Section Utama */
+        /* Header Section - Konsep Bersih Tanpa Badge & Teks Pengenalan Lama */
         header {
-            background: linear-gradient(180deg, #FFE4E1, var(--primary-pink)); 
-            padding: 4rem 2rem 5rem 2rem;
-            text-align: center;
-            border-bottom: 2px solid var(--accent-pink);
-            position: relative;
-        }
-
-        /* Badge Kapsul Atas Gambar (Ikut rujukan image_de7c81.png) */
-        .info-badge {
-            display: inline-flex;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 5rem 2rem 3rem 2rem;
+            display: flex;
+            flex-direction: column;
             align-items: center;
-            background-color: rgba(255, 183, 197, 0.2);
-            border: 1px solid rgba(230, 92, 140, 0.3);
-            color: #B52B59;
-            padding: 0.4rem 1.2rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            margin-bottom: 2rem;
-            gap: 0.4rem;
+            text-align: center;
         }
 
-        /* Frame Gambar Profile Bentuk Blob Organik Cantik */
+        /* Frame Gambar Bulat Klasik dengan Border Bayang (Bukan bentuk Blob lagi) */
         .profile-frame {
-            width: 200px;
-            height: 200px;
-            /* Bentuk beralun organik sebijik macam rujukan */
-            border-radius: 60% 40% 60% 40% / 40% 60% 40% 60%;
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
             object-fit: cover;
-            margin: 0 auto 2rem auto;
-            border: 6px solid #FFFFFF;
-            box-shadow: 0 12px 30px rgba(212, 165, 184, 0.4);
-            display: block;
-            animation: profileMorph 8s ease-in-out infinite alternate;
-            transition: transform 0.3s ease;
-        }
-
-        /* Kesan animasi beralun lembut automatik */
-        @keyframes profileMorph {
-            0% { border-radius: 60% 40% 60% 40% / 40% 60% 40% 60%; }
-            100% { border-radius: 40% 60% 40% 60% / 60% 40% 60% 40%; }
-        }
-
-        .profile-frame:hover {
-            transform: scale(1.05);
+            margin-bottom: 1.5rem;
+            border: 4px solid white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
         }
 
         header h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 800;
-            letter-spacing: -0.02em;
-            color: #1A3050; /* Warna biru gelap lembut untuk impak nama yang kemas */
-            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+            letter-spacing: -0.01em;
+            margin-bottom: 0.5rem;
         }
 
-        header .intro-text {
-            max-width: 800px;
-            margin: 0 auto 2.5rem auto;
-            font-size: 1.15rem;
-            line-height: 1.8;
-            color: #556270;
+        /* Tagline Ringkas Baru */
+        .tagline {
+            font-size: 1.1rem;
+            color: var(--pink-accent);
+            font-weight: 600;
+            margin-bottom: 2.5rem;
         }
 
-        /* Metadata Grid */
+        /* Metadata Grid Kemas */
         .meta-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1.5rem;
-            max-width: 900px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.6);
+            width: 100%;
+            max-width: 850px;
+            background: #FFFFFF;
             padding: 1.5rem;
             border-radius: 16px;
-            border: 1px solid rgba(255, 183, 197, 0.3);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            border: 1px solid rgba(0,0,0,0.03);
         }
 
         .meta-item {
-            text-align: left;
-            border-left: 3px solid var(--accent-pink);
-            padding-left: 12px;
+            text-align: center;
         }
 
         .meta-item strong {
-            color: var(--dark-pink);
+            color: var(--text-dark);
             display: block;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 0.25rem;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.3rem;
         }
 
         .meta-item span {
-            color: var(--text-main);
+            color: var(--text-body);
             font-weight: 500;
-            font-size: 1.05rem;
+            font-size: 1rem;
         }
 
         /* SDG Showcase Box */
         .sdg-box {
-            background: #FFFFFF;
-            border: 1px solid var(--accent-pink);
+            background: var(--pink-light);
             padding: 2rem;
-            border-radius: 20px;
-            max-width: 900px;
-            margin: 3rem auto 0 auto;
+            border-radius: 16px;
+            max-width: 850px;
+            margin: 2.5rem auto 0 auto;
             text-align: left;
-            box-shadow: 0 10px 25px rgba(212, 165, 184, 0.1);
+            border-left: 4px solid var(--pink-accent);
         }
 
         .sdg-box h3 {
-            color: var(--dark-pink);
-            font-size: 1.3rem;
-            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
         }
 
         .sdg-box p {
-            font-size: 1rem;
-            color: var(--text-main);
-            line-height: 1.7;
+            font-size: 0.95rem;
+            color: var(--text-body);
         }
 
         /* Sections Layout */
         section {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 5rem 2rem;
+            padding: 4rem 2rem;
         }
 
         section h2 {
-            font-size: 2rem;
+            font-size: 1.75rem;
             font-weight: 700;
-            margin-bottom: 3rem;
-            color: var(--dark-pink);
+            margin-bottom: 2.5rem;
+            color: var(--text-dark);
             position: relative;
-            display: inline-block;
         }
 
         section h2::after {
             content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 50%;
+            display: block;
+            width: 35px;
             height: 3px;
-            background: var(--accent-pink);
+            background: var(--pink-accent);
+            margin-top: 8px;
             border-radius: 2px;
         }
 
-        /* Card Elements Grid Framework */
+        /* Grid Framework */
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
         }
 
         .card {
             background: var(--card-bg);
-            border: 1px solid rgba(255, 183, 197, 0.4);
-            border-radius: 20px;
+            border-radius: 16px;
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            transition: all 0.4s ease;
-            box-shadow: 0 4px 15px rgba(212, 165, 184, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.04);
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-pink);
-            box-shadow: 0 10px 25px rgba(255, 183, 197, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.08);
         }
 
         /* Embedded Video Players */
@@ -299,59 +241,59 @@
         }
 
         .card-content {
-            padding: 2rem;
+            padding: 1.75rem;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
 
         .card-content h3 {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 700;
-            margin-bottom: 0.75rem;
-            color: var(--dark-pink);
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
         }
 
         .card-content .description {
-            font-size: 0.95rem;
-            color: var(--text-muted);
+            font-size: 0.9rem;
+            color: var(--text-body);
             margin-bottom: 1.5rem;
         }
 
         .card-content .reflection-wrapper {
-            background: var(--primary-pink);
-            padding: 1.2rem;
+            background: #F9FAFB;
+            padding: 1rem;
             border-radius: 12px;
-            border-left: 3px solid var(--accent-pink);
+            border-top: 2px solid var(--pink-accent);
             margin-top: auto;
         }
 
         .card-content .reflection-title {
             font-weight: 700;
-            color: var(--dark-pink);
-            margin-bottom: 0.4rem;
-            font-size: 0.85rem;
+            color: var(--text-dark);
+            margin-bottom: 0.3rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
         }
 
         .card-content .reflection-text {
             font-style: italic;
-            color: var(--text-main);
-            font-size: 0.95rem;
+            color: var(--text-body);
+            font-size: 0.9rem;
         }
 
         /* Project Assignment Specifications */
         .project-problem {
-            background: rgba(255, 183, 197, 0.1);
-            border: 1px dashed var(--accent-pink);
-            padding: 1rem;
-            border-radius: 12px;
-            margin-bottom: 1.2rem;
-            font-size: 0.95rem;
+            background: rgba(0,0,0,0.02);
+            border: 1px solid rgba(0,0,0,0.05);
+            padding: 0.85rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
         }
 
         .project-problem strong {
-            color: var(--dark-pink);
+            color: var(--text-dark);
             display: block;
             margin-bottom: 0.2rem;
         }
@@ -360,132 +302,114 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
-            background: var(--dark-pink);
+            background: var(--text-dark);
             color: #FFFFFF;
             text-decoration: none;
-            padding: 0.8rem 1.5rem;
-            border-radius: 12px;
-            font-weight: 700;
-            margin-top: 1.5rem;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
+            padding: 0.7rem 1.2rem;
+            border-radius: 10px;
+            font-weight: 600;
+            margin-top: 1.2rem;
+            font-size: 0.9rem;
+            transition: background 0.3s ease;
         }
 
         .btn-github:hover {
-            background: var(--accent-pink);
-            color: #FFFFFF;
+            background: var(--pink-accent);
         }
 
         /* Highlight Text */
         .highlight-text {
-            font-size: 1.15rem;
-            line-height: 1.9;
-            color: var(--text-main);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-body);
             background: #FFFFFF;
-            padding: 2.5rem;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 183, 197, 0.4);
-            box-shadow: 0 4px 15px rgba(212, 165, 184, 0.05);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            border: 1px solid rgba(0,0,0,0.03);
         }
 
         /* Skills Grid */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.2rem;
         }
 
         .skills-card {
             background: var(--card-bg);
-            border: 1px solid rgba(255, 183, 197, 0.3);
-            padding: 1.5rem;
-            border-radius: 16px;
+            border: 1px solid rgba(0,0,0,0.04);
+            padding: 1.2rem;
+            border-radius: 12px;
             display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            box-shadow: 0 4px 10px rgba(212, 165, 184, 0.05);
+            align-items: center;
+            gap: 0.8rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.01);
         }
 
         .skills-card .icon {
-            font-size: 1.4rem;
-            background: var(--primary-pink);
-            padding: 0.5rem;
-            border-radius: 10px;
+            font-size: 1.2rem;
+            background: var(--pink-light);
+            padding: 0.4rem;
+            border-radius: 8px;
         }
 
         .skills-card h4 {
-            color: var(--dark-pink);
-            font-size: 1.1rem;
-            margin-bottom: 0.25rem;
+            color: var(--text-dark);
+            font-size: 1rem;
+            margin-bottom: 0.1rem;
         }
 
         .skills-card p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
+            color: var(--text-body);
+            font-size: 0.85rem;
         }
 
         /* Resources List */
         .resources-list {
             list-style: none;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.2rem;
         }
 
         .resources-list li {
             background: var(--card-bg);
-            border: 1px solid rgba(255, 183, 197, 0.3);
-            padding: 1.5rem;
-            border-radius: 16px;
+            border: 1px solid rgba(0,0,0,0.04);
+            padding: 1.2rem;
+            border-radius: 12px;
         }
 
         .resources-list li strong {
-            color: var(--dark-pink);
+            color: var(--text-dark);
             display: block;
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            font-size: 1rem;
         }
 
         .resources-list li p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
+            font-size: 0.85rem;
+            color: var(--text-body);
         }
 
         footer {
-            background-color: #FFE4E1;
+            background-color: #FFFFFF;
             text-align: center;
-            padding: 3rem 2rem;
-            color: var(--text-main);
-            font-size: 0.95rem;
-            border-top: 1px solid var(--accent-pink);
-        }
-
-        footer .credits {
-            color: var(--dark-pink);
-            font-weight: 600;
+            padding: 2.5rem 2rem;
+            color: var(--text-body);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(0,0,0,0.05);
         }
 
         @media (max-width: 768px) {
-            body {
-                padding-top: 140px;
-            }
             .nav-container {
-                flex-direction: column;
-                gap: 0.8rem;
-                padding: 0.8rem 1rem;
+                padding: 1rem;
             }
             .nav-links {
-                gap: 0.2rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            nav a {
-                padding: 0.4rem 0.6rem;
-                font-size: 0.8rem;
+                gap: 1rem;
             }
             header h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             .grid-container {
                 grid-template-columns: 1fr;
@@ -495,45 +419,35 @@
 </head>
 <body>
 
-    <!-- NAV BAR BARU DENGAN LOGO QUIZEDU SEBELAH KIRI -->
     <nav>
         <div class="nav-container">
-            <a href="#home" class="nav-logo">
-                <div class="logo-icon">🎀</div>
-                <div class="logo-text">QUIZ<span>EDU</span></div>
-            </a>
+            <a href="#home" class="nav-logo">AQ<span>.PORTFOLIO</span></a>
             <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#labs">Labs</a>
-                <a href="#projects">Projects</a>
-                <a href="#reflection">Reflection</a>
-                <a href="#skills">Skills</a>
-                <a href="#resources">Resources</a>
+                <a href="#home" class="nav-item">Home</a>
+                <a href="#labs" class="nav-item">Labs</a>
+                <a href="#projects" class="nav-item">Projects</a>
+                <a href="#reflection" class="nav-item">Reflection</a>
+                <a href="#skills" class="nav-item">Skills</a>
+                <a href="#resources" class="nav-item">Resources</a>
             </div>
         </div>
     </nav>
 
     <header id="home">
-        <!-- BADGE KAPSUL MENGIKUT ELEMEN RUJUKAN -->
-        <div class="info-badge">
-            <span>✨ A211526</span>
-            <span>•</span>
-            <span>2IT2</span>
-            <span>•</span>
-            <span>INFORMATION TECHNOLOGY</span>
-        </div>
-
-        <!-- FRAME GAMBAR PROFILE BENTUK BLOB ORGANIK SEBIJIK MACAM RUJUKAN -->
-        <img src="./profile.jpg" alt="Alisa Qaisarah" class="profile-frame">
+        <img src="./profile.jpeg" alt="Alisa Qaisarah" class="profile-frame">
         
         <h1>ALISA QAISARAH BINTI RIZAUDDIN</h1>
-        
-        <p class="intro-text">
-            Information Technology Student @ Universiti Kebangsaan Malaysia. 
-            Bridging mobile development and game-based learning mechanics with the smart <strong>QuizEdu</strong> app. 🌸
-        </p>
+        <div class="tagline">Mobile Programming Portfolio</div>
 
         <div class="meta-grid">
+            <div class="meta-item">
+                <strong>Matric No.</strong>
+                <span>A211526</span>
+            </div>
+            <div class="meta-item">
+                <strong>Class / Group</strong>
+                <span>2IT2</span>
+            </div>
             <div class="meta-item">
                 <strong>Programme</strong>
                 <span>Teknologi Maklumat</span>
@@ -541,10 +455,6 @@
             <div class="meta-item">
                 <strong>Instructor</strong>
                 <span>Dr. Nazatul Aini</span>
-            </div>
-            <div class="meta-item">
-                <strong>Course Code</strong>
-                <span>TK2323 / TM2213</span>
             </div>
         </div>
 
@@ -558,7 +468,6 @@
         <h2>Laboratory Exercises</h2>
         <div class="grid-container">
             
-            <!-- Lab 1 -->
             <div class="card">
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/G2VQSF-t0lc?si=UYOl7I0qp2RYpbr" allowfullscreen></iframe>
@@ -573,7 +482,6 @@
                 </div>
             </div>
 
-            <!-- Lab 2 -->
             <div class="card">
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/gWI5PMN6yjI?si=lD1lhPjmG0WZok8f" allowfullscreen></iframe>
@@ -588,7 +496,6 @@
                 </div>
             </div>
 
-            <!-- Lab 3 -->
             <div class="card">
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/L5_1BxlJUFY?si=o8al9ZDCy-GswP5p" allowfullscreen></iframe>
@@ -603,7 +510,6 @@
                 </div>
             </div>
 
-            <!-- Lab 4 -->
             <div class="card">
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/w91Pi6hYioQ?si=NiN-5iT0wNRUQ4HT" allowfullscreen></iframe>
@@ -618,7 +524,6 @@
                 </div>
             </div>
 
-            <!-- Lab 5 -->
             <div class="card">
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/G-u3l-An7n8?si=P-EunCuek93STF9B" allowfullscreen></iframe>
@@ -640,13 +545,12 @@
         <h2>Course Projects</h2>
         <div class="grid-container">
 
-            <!-- Project 1 -->
             <div class="card">
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/nKUb_J2FHmE?si=07TMRbZbhfjiGB3A" allowfullscreen></iframe>
                 </div>
                 <div class="card-content">
-                    <h3>Project 1: QuizEdu App</h3>
+                    <h3>Project 1: Mobile Learning App</h3>
                     <div class="project-problem">
                         <strong>Problem Statement:</strong>
                         The severe shortage of interactive, digitized quiz-lobby tools within standard higher education lecture settings leads to low revision engagement and uninspired peer-to-peer competition.
@@ -659,13 +563,12 @@
                 </div>
             </div>
 
-            <!-- Project 2 -->
             <div class="card">
                 <div class="video-container">
                     <iframe src="https://www.youtube.com/embed/36reuIWBiqM?si=UKXVwuRvfnty77HP" allowfullscreen></iframe>
                 </div>
                 <div class="card-content">
-                    <h3>Project 2: QuizEdu App (Advanced)</h3>
+                    <h3>Project 2: Advanced Mobile Application</h3>
                     <div class="project-problem">
                         <strong>Problem Statement:</strong>
                         Inefficient, manual validation mechanisms for verifying physical student presence in interactive quiz zones, compounded by a lack of dynamic question streams fetched directly from internet microservices.
@@ -767,7 +670,7 @@
 
     <footer>
         <p>Alisa Qaisarah Binti Rizauddin | Matric No: A211526</p>
-        <p class="credits">Mobile Programming Course Portfolio &copy; 2026</p>
+        <p>Mobile Programming Course Portfolio &copy; 2026</p>
     </footer>
 
 </body>
