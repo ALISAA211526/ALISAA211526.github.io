@@ -1,0 +1,450 @@
+* {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--bg-dark);
+        color: var(--text-main);
+        line-height: 1.6;
+        padding-top: 70px;
+    }
+
+    header {
+        background: linear-gradient(135deg, var(--primary-dark), #4A0E4E);
+        padding: 4rem 2rem;
+        text-align: center;
+        border-bottom: 3px solid var(--primary);
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        color: #FFFFFF;
+    }
+
+    header .matric {
+        font-size: 1.2rem;
+        color: var(--primary-light);
+        margin-bottom: 1.5rem;
+        font-weight: bold;
+    }
+
+    .meta-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        max-width: 800px;
+        margin: 2rem auto 0 auto;
+        background: rgba(0, 0, 0, 0.3);
+        padding: 1.5rem;
+        border-radius: 8px;
+        text-align: left;
+    }
+
+    .meta-item strong {
+        color: var(--primary-light);
+        display: block;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: var(--nav-bg);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--border-color);
+        z-index: 1000;
+    }
+
+    .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 1rem;
+    }
+
+    nav a {
+        color: var(--text-main);
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        font-weight: 500;
+        font-size: 0.95rem;
+        transition: color 0.3s;
+    }
+
+    nav a:hover {
+        color: var(--primary);
+    }
+
+    section {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    section h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        color: #FFFFFF;
+        border-left: 5px solid var(--primary);
+        padding-left: 10px;
+    }
+
+    .sdg-box {
+        background-color: #251125;
+        border: 1px solid var(--primary);
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-top: 1.5rem;
+    }
+
+    .sdg-box h3 {
+        color: #FF69B4;
+        margin-bottom: 0.5rem;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem;
+    }
+
+    .card {
+        background-color: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 12px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        border-color: var(--primary);
+    }
+
+    .video-container {
+        position: relative;
+        width: 100%;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        background-color: #000;
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+
+    .card-content {
+        padding: 1.5rem;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-content h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.75rem;
+        color: #FFFFFF;
+    }
+
+    .card-content p {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        margin-bottom: 1rem;
+    }
+
+    .card-content .reflection-title {
+        font-weight: bold;
+        color: var(--primary-light);
+        margin-top: auto;
+        margin-bottom: 0.25rem;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+    }
+
+    .card-content .reflection-text {
+        font-style: italic;
+        color: var(--text-main);
+    }
+
+    .btn-github {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #24292e;
+        color: #FFFFFF;
+        text-decoration: none;
+        padding: 0.75rem 1rem;
+        border-radius: 6px;
+        font-weight: 600;
+        margin-top: 1rem;
+        border: 1px solid #444;
+        transition: background-color 0.3s;
+    }
+
+    .btn-github:hover {
+        background-color: var(--primary);
+        border-color: var(--primary);
+    }
+
+    .skills-list, .resources-list {
+        list-style: none;
+    }
+
+    .skills-list li, .resources-list li {
+        background-color: var(--bg-card);
+        border: 1px solid var(--border-color);
+        padding: 1rem;
+        margin-bottom: 0.75rem;
+        border-radius: 8px;
+    }
+
+    .skills-list li strong {
+        color: var(--primary-light);
+    }
+
+    .resources-list li strong {
+        color: #FFFFFF;
+        display: block;
+        margin-bottom: 0.25rem;
+    }
+
+    .highlight-text {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #FFFFFF;
+    }
+
+    footer {
+        background-color: #0b0b0b;
+        text-align: center;
+        padding: 2rem;
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        border-top: 1px solid var(--border-color);
+    }
+
+    footer p {
+        margin-bottom: 0.25rem;
+    }
+
+    @media (max-width: 768px) {
+        body {
+            padding-top: 110px;
+        }
+        .nav-container {
+            padding: 0.5rem;
+        }
+        nav a {
+            padding: 0.3rem 0.6rem;
+            font-size: 0.85rem;
+        }
+        header h1 {
+            font-size: 2rem;
+        }
+        section {
+            padding: 3rem 1.5rem;
+        }
+    }
+</style>
+<nav>
+    <div class="nav-container">
+        <a href="#home">Home</a>
+        <a href="#labs">Labs</a>
+        <a href="#projects">Projects</a>
+        <a href="#reflection">Reflection</a>
+        <a href="#skills">Skills</a>
+        <a href="#resources">Resources</a>
+    </div>
+</nav>
+
+<header id="home">
+    <h1>Alisa Qaisarah Binti Rizauddin</h1>
+    <div class="matric">Matric No: A211526</div>
+    <p style="max-width: 750px; margin: 0 auto; font-size: 1.1rem; color: #F0F0F0;">
+        I am a second-year student pursuing advanced studies in Android Mobile Development. Throughout this course, I have mastered the art of building modern, declarative user interfaces using Jetpack Compose, advancing from fundamental UI layouts to cloud database synchronization and hardware sensor integration.
+    </p>
+
+    <div class="meta-grid">
+        <div class="meta-item">
+            <strong>Programme</strong>
+            Teknologi Maklumat
+        </div>
+        <div class="meta-item">
+            <strong>Instructor</strong>
+            Dr. Nazatul Aini
+        </div>
+        <div class="meta-item">
+            <strong>Course Code</strong>
+            TK2323 / TM2213
+        </div>
+    </div>
+
+    <div class="sdg-box" style="max-width: 800px; margin: 2rem auto 0 auto; text-align: left;">
+        <h3>SDG 4: Quality Education</h3>
+        <p>Passive learning environments in traditional lecture halls often limit peer-to-peer interaction and student engagement. This gamified quiz ecosystem directly enhances collaborative learning and academic material retention.</p>
+    </div>
+</header>
+
+<section id="labs">
+    <h2>Laboratory Exercises</h2>
+    <div class="grid-container">
+        
+        <div class="card">
+            <div class="video-container">
+                <iframe src="[https://www.youtube.com/embed/G2VQSF-t0lc?si=UYOl7I0qp2RYpbr](https://www.youtube.com/embed/G2VQSF-t0lc?si=UYOl7I0qp2RYpbr)" allowfullscreen></iframe>
+            </div>
+            <div class="card-content">
+                <h3>Lab 1: User Interface (UI)</h3>
+                <p>Foundations of layout designs, composition frameworks, and architectural style mechanics using structural modifiers.</p>
+                <div class="reflection-title">Reflection</div>
+                <p class="reflection-text">I learned how to build declarative user interface structures using fundamental Jetpack Compose building blocks such as Column, Row, and Box. I also grasped the mechanics of modifying UI aesthetics—such as paddings, background brushes, and typography—without relying on traditional XML layouts.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="video-container">
+                <iframe src="[https://www.youtube.com/embed/gWI5PMN6yjI?si=lD1lhPjmG0WZok8f](https://www.youtube.com/embed/gWI5PMN6yjI?si=lD1lhPjmG0WZok8f)" allowfullscreen></iframe>
+            </div>
+            <div class="card-content">
+                <h3>Lab 2: Interaction</h3>
+                <p>Event handling, interaction states, and reactive responses triggered directly by client runtimes.</p>
+                <div class="reflection-title">Reflection</div>
+                <p class="reflection-text">This lab introduced me to the concept of State Management in Compose using remember and mutableStateOf. I successfully implemented reactive UI elements that dynamically respond to real-time user inputs, clicks, and state changes.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="video-container">
+                <iframe src="[https://www.youtube.com/embed/L5_1BxlJUFY?si=o8al9ZDCy-GswP5p](https://www.youtube.com/embed/L5_1BxlJUFY?si=o8al9ZDCy-GswP5p)" allowfullscreen></iframe>
+            </div>
+            <div class="card-content">
+                <h3>Lab 3: Material Design</h3>
+                <p>Theming implementations, uniform component styles, and dark/light mode context wrappers.</p>
+                <div class="reflection-title">Reflection</div>
+                <p class="reflection-text">I explored the deployment of Material Design components and integrated a custom corporate color palette inspired by the university's corporate identity. I successfully built highly structured Card components, Floating Action Buttons, and handled both Light and Dark theme implementations.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="video-container">
+                <iframe src="[https://www.youtube.com/embed/w91Pi6hYioQ?si=NiN-5iT0wNRUQ4HT](https://www.youtube.com/embed/w91Pi6hYioQ?si=NiN-5iT0wNRUQ4HT)" allowfullscreen></iframe>
+            </div>
+            <div class="card-content">
+                <h3>Lab 4: Navigation</h3>
+                <p>Multi-screen destination routing configurations, screen backstack pipelines, and argument parsing rules.</p>
+                <div class="reflection-title">Reflection</div>
+                <p class="reflection-text">In this macro exercise, I implemented a robust multi-screen navigation system using a centralized NavHost and NavController. I also mastered passing type-safe arguments—such as Game Room PINs—seamlessly from one destination screen to another.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="video-container">
+                <iframe src="[https://www.youtube.com/embed/G-u3l-An7n8?si=P-EunCuek93STF9B](https://www.youtube.com/embed/G-u3l-An7n8?si=P-EunCuek93STF9B)" allowfullscreen></iframe>
+            </div>
+            <div class="card-content">
+                <h3>Lab 5: Room Database</h3>
+                <p>Local SQLite structural persistence layers, entity abstraction models, and stream observers.</p>
+                <div class="reflection-title">Reflection</div>
+                <p class="reflection-text">I acquired practical experience in offline data persistence using the Android Room SQLite abstraction library. I set up data structures via Entity definitions, managed secure CRUD operations via DAO interfaces, and safely observed historical data streams using Kotlin Flow.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="projects">
+    <h2>Course Projects</h2>
+    <div class="grid-container">
+
+        <div class="card">
+            <div class="video-container">
+                <iframe src="[https://www.youtube.com/embed/nKUb_J2FHmE?si=07TMRbZbhfjiGB3A](https://www.youtube.com/embed/nKUb_J2FHmE?si=07TMRbZbhfjiGB3A)" allowfullscreen></iframe>
+            </div>
+            <div class="card-content">
+                <h3>Project 1: QuizEdu App (Lab 4 + Core Features)</h3>
+                <p><strong>Problem Statement:</strong> The severe shortage of interactive, digitized quiz-lobby tools within standard higher education lecture settings leads to low revision engagement and uninspired peer-to-peer competition.</p>
+                <div class="reflection-title">Lessons Learned</div>
+                <p class="reflection-text">I successfully merged custom Material 3 UI assets with an uninterrupted navigation lifecycle. Furthermore, I adapted my codebase to the MVVM (Model-View-ViewModel) architectural pattern, keeping the data logic cleanly decoupled from the UI layer for optimal scalability.</p>
+                <a href="[https://github.com/ALISAA211526/Project1](https://github.com/ALISAA211526/Project1)" target="_blank" class="btn-github">View on GitHub</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="video-container">
+                <iframe src="[https://www.youtube.com/embed/36reuIWBiqM?si=UKXVwuRvfnty77HP](https://www.youtube.com/embed/36reuIWBiqM?si=UKXVwuRvfnty77HP)" allowfullscreen></iframe>
+            </div>
+            <div class="card-content">
+                <h3>Project 2: QuizEdu App (Full-Stack IoT & Cloud)</h3>
+                <p><strong>Problem Statement:</strong> Inefficient, manual validation mechanisms for verifying physical student presence in interactive quiz zones, compounded by a lack of dynamic question streams fetched directly from internet microservices.</p>
+                <div class="reflection-title">Lessons Learned</div>
+                <p class="reflection-text">This project significantly escalated my core engineering capabilities. I effectively orchestrated Retrofit to asynchronously stream live questions from a Web API, configured Google's FusedLocationProviderClient to track physical device GPS hardware to verify student proximity, and constructed an immediate cloud-sync bridge that pushes local Room database entries straight to a remote Firebase Firestore Cloud cluster.</p>
+                <a href="[https://github.com/ALISAA211526/Project2](https://github.com/ALISAA211526/Project2)" target="_blank" class="btn-github">View on GitHub</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="reflection">
+    <h2>Reflection & Learning Journey</h2>
+    <p class="highlight-text">
+        My learning trajectory from Lab 1 through Project 2 has been a profoundly challenging yet rewarding transformation. Moving away from compiling static text views, I am now capable of engineering interconnected, full-stack client applications that converse fluidly with remote servers. Debugging runtime sensor callbacks and tracking real-time Firestore synchronization rifts has sculpted me into a critical, precise, and highly resilient software engineer.
+    </p>
+</section>
+
+<section id="skills">
+    <h2>Skills & Tech Stack</h2>
+    <ul class="skills-list">
+        <li><strong>Language:</strong> Kotlin</li>
+        <li><strong>UI Framework:</strong> Jetpack Compose (Material Design 3)</li>
+        <li><strong>Architecture:</strong> MVVM Pattern, Repository Pattern, Coroutines & Kotlin Flow</li>
+        <li><strong>Local Storage:</strong> Room Database (SQLite local storage)</li>
+        <li><strong>Network Client:</strong> Retrofit HTTP Client & Gson Converters</li>
+        <li><strong>Hardware Sensors:</strong> Google Play Services Location API (GPS tracking)</li>
+        <li><strong>Cloud Infrastructure:</strong> Google Firebase Firestore (NoSQL cloud syncing)</li>
+    </ul>
+</section>
+
+<section id="resources">
+    <h2>Resources & Credits</h2>
+    <ul class="resources-list">
+        <li>
+            <strong>Open Trivia API</strong>
+            Leveraged through Retrofit to cleanly parse and download dynamic question pools asynchronously.
+        </li>
+        <li>
+            <strong>Google Play Services Location SDK</strong>
+            Used to extract real-time hardware location coordinate coordinates with high-accuracy parameters.
+        </li>
+        <li>
+            <strong>Firebase Firestore Android Client</strong>
+            Deployed as the primary remote database engine to preserve cross-platform game room states.
+        </li>
+        <li>
+            <strong>AI Collaboration Acknowledgement</strong>
+            An AI assistant (Gemini) was strategically engaged as a peer collaborator to refactor intricate Material 3 Compose components (such as the 90% ring-accuracy graph on QuizHistoryDetailsScreen), address specific FilterChipDefaults compiler warnings, and assist in structuring the 3-minute Video Stimulated Recall (VSR) presentation script to meet rubric specifications.
+        </li>
+    </ul>
+</section>
+
+<footer>
+    <p>Alisa Qaisarah Binti Rizauddin | Matric No: A211526</p>
+    <p>Mobile Programming Course Portfolio &copy; 2026</p>
+</footer>
